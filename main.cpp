@@ -18,12 +18,14 @@ public:
 
     void boxInput(wxKeyEvent& event);
 
+    //Gives buttons functionality
     void OnDijkstrasPush(wxCommandEvent& event);
     void OnBFSPush(wxCommandEvent& event);
     void OnDFSPush(wxCommandEvent& event);
     static std::string stringOutput(const std::pair<std::pair<long long, int>,
             std::vector<std::string>>& data, const std::string& algName);
 
+    //Initializes buttons and boxes, used to organize Frame constructor
     void makeBoxes();
     void makeButtons();
 
@@ -72,6 +74,7 @@ bool App::OnInit()
 
 
 //                  FRAME FUNCTIONS
+
 Frame::Frame(const wxString& title, const wxPoint& pos, const wxSize& size)
         : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
@@ -88,7 +91,6 @@ Frame::Frame(const wxString& title, const wxPoint& pos, const wxSize& size)
                                        wxDefaultSize,wxALIGN_CENTER_HORIZONTAL, "iText");
 
 
-    //SetMenuBar(menuBar);
 }
 
 //Assigns dropdown box data
